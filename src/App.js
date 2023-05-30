@@ -1,14 +1,13 @@
 import './App.css';
-import { useKeyboardListState } from './hooks/useKeyState';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import SearchBar from './components/SearchBar/SearchBar';
+
 
 
 function App() {
-  const listOfKeyPresses = useKeyboardListState();
   return (
     <main>
-      <ul>
-        {listOfKeyPresses.map(keyPressString => <li>{keyPressString}</li>)}
-      </ul>
+      <SearchBar />
     </main>
   );
 }
