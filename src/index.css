@@ -1,0 +1,13 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+
+main{
+    margin:0;
+    padding: 10px 250px;
+}
+
+#temperature{
+    text-align: center;
+}

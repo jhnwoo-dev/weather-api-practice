@@ -25,10 +25,10 @@ function SearchBar() {
         }
     }
 
-    const callAPI = async () => {
+    const callAPI = () => {
         const lat = document.getElementById('latitude').value;
         const long = document.getElementById('longitude').value;
-        await GetData(lat, long);
+        GetData(lat, long);
     }
 
     return (
