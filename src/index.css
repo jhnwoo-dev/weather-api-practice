@@ -5,9 +5,25 @@
 
 main{
     margin:0;
-    padding: 10px 250px;
+    padding: 25px 250px;
 }
 
-#temperature{
+#info{
     text-align: center;
+}
+
+@media screen and (max-width:1400px ){
+    main{
+        padding: 25px 200px;
+    }
+}
+@media screen and (max-width:1000px ){
+    main{
+        padding: 25px 100px;
+    }
+}
+@media screen and (max-width:600px ){
+    main{
+        padding: 25px 25px;
+    }
 }

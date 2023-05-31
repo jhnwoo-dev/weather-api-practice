@@ -6,26 +6,27 @@ import WeatherDisplay from '../WeatherDisplay/WeatherDisplay';
 
 function SearchBar() {
     const [temp, setTemp] = useState(null)
+    const [wind, setWind] = useState(null)
 
 
     function GetData(lat, long) {
         let request = new XMLHttpRequest();
-
         const api_url = `https://api.open-meteo.com/v1/dwd-icon?latitude=${lat}&longitude=${long}&hourly=temperature_2m&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch`
-
         request.open("GET", api_url);
         request.send();
         request.onload = () => {
             if (request.status === 200) {
                 let data = JSON.parse(request.response);
+                console.log(data)
                 setTemp(data.current_weather.temperature)
+                setWind(data.current_weather.windspeed)
             } else {
-                alert(`ERROR: ${request.status}`)
+                alert(`ERROR: ${request.status} - Please input valid latitude and longitude coordinates.`)
             }
         }
     }
 
-    const callAPI = () => {
+    function callAPI() {
         const lat = document.getElementById('latitude').value;
         const long = document.getElementById('longitude').value;
         GetData(lat, long);
@@ -42,7 +43,7 @@ function SearchBar() {
                 </Button>
             </InputGroup>
 
-            <WeatherDisplay temp={temp} />
+            <WeatherDisplay temp={temp} windspeed={wind} />
         </>
     )
 }

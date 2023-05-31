@@ -7,10 +7,13 @@ function WeatherDisplay(props) {
   useEffect(() => {
     if (props.temp) {
       setDisplay(
-        <h1 id="temperature"> {props.temp}&deg;F </h1>
+        <section id="info">
+          <h1> {props.temp}&deg;F </h1>
+          <h2> {props.windspeed} mph </h2>
+        </section>
       )
     }
-  }, [props.temp])
+  }, [props.temp, props.windspeed])
 
   return (
     display
