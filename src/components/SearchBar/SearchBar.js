@@ -24,6 +24,7 @@ function SearchBar() {
                 alert(`ERROR: ${request.status} - Please input valid latitude and longitude coordinates.`)
             }
         }
+        //request.send should be here at the end of the function
     }
 
     function callAPI() {
