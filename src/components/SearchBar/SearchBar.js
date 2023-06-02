@@ -16,16 +16,13 @@ function SearchBar({
         const api_url = `https://api.open-meteo.com/v1/dwd-icon?latitude=${lat}&longitude=${long}&hourly=temperature_2m&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch`
 
         request.open("GET", api_url);
-        request.onload = () => {
+        request.onload = function () {
             if (request.status === 200) {
                 let data = JSON.parse(request.response)
                 cb(data);
             } else {
-                cb(new Error, (`ERROR: ${request.status} - Please input valid latitude and longitude coordinates.`))
+                cb(new Error(`ERROR: ${request.status} - Please input valid latitude and longitude coordinates.`))
             }
-        }
-        request.onerror = function () {
-            cb(new Error('API request failed.'))
         }
         request.send();
     }
