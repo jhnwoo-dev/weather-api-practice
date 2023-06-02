@@ -9,11 +9,11 @@ function WeatherDisplay(props) {
       setDisplay(
         <section id="info">
           <h1> {props.temp}&deg;F </h1>
-          <h2> {props.windspeed} mph </h2>
+          <h2> {props.wind} mph </h2>
         </section>
       )
     }
-  }, [props.temp, props.windspeed])
+  }, [props.temp, props.wind])
 
   return (
     display
