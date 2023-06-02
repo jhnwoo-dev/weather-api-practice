@@ -12,7 +12,7 @@ function App() {
   return (
     <main>
       <SearchBar setTemp={setTemp} setWind={setWind} />
-      <WeatherDisplay temp={temp} windspeed={wind} />
+      <WeatherDisplay temp={temp} wind={wind} />
     </main>
   );
 }

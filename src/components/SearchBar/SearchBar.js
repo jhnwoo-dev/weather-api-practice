@@ -28,10 +28,11 @@ function SearchBar({
     }
 
     function callAPI() {
-        const data = GetData(lat, long);
-        console.log(data)
-        setTemp(data)
-        setWind(data)
+        GetData(lat, long, (data) => {
+            console.log(data)
+            setTemp(data.current_weather.temperature)
+            setWind(data.current_weather.windspeed)
+        });
     }
 
     return (
